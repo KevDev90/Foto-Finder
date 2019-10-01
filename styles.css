@@ -1,0 +1,79 @@
+.search-button {
+  background-image: url(images/search.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 100%;
+  vertical-align: middle;
+  width: 20px;
+  height: 19px;
+  border-radius: 6%;
+}
+
+.search-input {
+  display: inline-flex;
+}
+
+header {
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: #3E2A35;
+  margin: auto;
+}
+
+.foto-finder-header {
+  color: white;
+  
+}
+
+.foto-logo {
+  width: 7%;
+}
+
+.main-1 {
+  display: flex;
+  background-color: #3E2A35;
+  height: 50vh
+}
+
+.main-2 {
+  background-color: #C2B2B4;
+  height: 50vh
+}
+
+.flex-input {
+  display: inline-flex;
+}
+
+.caption-input {
+  width: 40%;
+}
+
+.title-input {
+  width: 40%;
+}
+
+.title {
+  color: #BDAFB0;
+}
+
+.caption {
+  color: #BDAFB0;
+}
+
+.choose-file {
+  width: 40%;
+  height: 15%;
+}
+
+.add-to-album {
+  width: 29%;
+  height: 12%;
+}
+
+.title-input {
+
+}
+
+.caption-input {
+
+}

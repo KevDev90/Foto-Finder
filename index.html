@@ -2,9 +2,32 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Foto finder</title>
   </head>
   <body>
-
-  </body>
+  <header>
+    <div class="flex-input">
+    <h1 class="foto-finder-header">Foto<img class="foto-logo" src="images/foto-finder-logo.svg" alt="Smiley face">Finder</h1>
+    <form action="/action_page.php">
+   <input class="search-input" type="text" placeholder="search">
+   </form>
+   <button type="button" class="search-button"></button>
+   </div>
+    </header>
+    <main class="main-1">
+      <form>
+        <label class="title">Title</label>
+          <input type="text" class="title-input"><br>
+      <form>
+        <label class="caption">Caption</label>
+          <input type="text" class="caption-input"><br>
+          <button type="button" class="choose-file">Choose File</button>
+          <button type="button" class="add-to-album">Add to Album</button>
+          </main>
+          <main class="main-2">
+          </main>
+          <script src="main.js"></script>
+          <script src="photo.js"></script>
+      </body>
 </html>
