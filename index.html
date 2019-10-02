@@ -2,29 +2,32 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Foto finder</title>
   </head>
   <body>
+    <div class="background-color">
   <header>
-    <div class="flex-input">
     <h1 class="foto-finder-header">Foto<img class="foto-logo" src="images/foto-finder-logo.svg" alt="Smiley face">Finder</h1>
-    <form action="/action_page.php">
+    <div class="flex-input">
    <input class="search-input" type="text" placeholder="search">
-   </form>
    <button type="button" class="search-button"></button>
    </div>
     </header>
     <main class="main-1">
       <form>
         <label class="title">Title</label>
-          <input type="text" class="title-input"><br>
-      <form>
-        <label class="caption">Caption</label>
-          <input type="text" class="caption-input"><br>
-          <button type="button" class="choose-file">Choose File</button>
+          <input type="text" class="title-input">
+          <label class="caption">Caption</label>
+          <input type="text" class="caption-input">
+          <label class="url">URL</label>
+          <input type="text" class="url-input"> <br>
           <button type="button" class="add-to-album">Add to Album</button>
+        </form>
           </main>
+        </div>
           <main class="main-2">
           </main>
           <script src="main.js"></script>
