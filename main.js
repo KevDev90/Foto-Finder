@@ -4,12 +4,15 @@ var titleInput = document.querySelector('.title-input')
 var captionInput = document.querySelector('.caption-input')
 var urlInput = document.querySelector('.url-input')
 var photoDisplay = document.querySelector('.main-2');
+var inputs = document.querySelectorAll('input');
 
 addButton.addEventListener('click', updateErrors);
 
-titleInput.addEventListener('keyup', function(event) {
+inputs.forEach(function(input){
+  return input.addEventListener('keyup', updateErrors);
+})
 
-});
+
 
 function addNewPhoto() {
   var newPhoto = makeInstance();

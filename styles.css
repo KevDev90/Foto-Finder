@@ -24,10 +24,11 @@ body {
   height: 19px;
   border-radius: 6%;
   margin-right: 5px;
+  padding-right: 2px;
 }
 
 .search-input {
-
+ height: 15px;
 }
 
 header {
