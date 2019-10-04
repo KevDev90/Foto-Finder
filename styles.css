@@ -23,6 +23,7 @@ body {
   width: 20px;
   height: 19px;
   border-radius: 6%;
+  margin-right: 5px;
 }
 
 .search-input {
@@ -47,6 +48,7 @@ header {
 
 .foto-logo {
   width: 9%;
+  margin-right: 2%;
 }
 
 .main-1 {
@@ -62,7 +64,10 @@ header {
   }
 
 .main-2 {
-
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: 60px;
 
 }
 
@@ -75,21 +80,21 @@ header {
   font-size: 230%;
   width: 65%;
   height: 40px;
-  margin-bottom: 2%;
+  margin-bottom: 3%;
 }
 
 .title-input {
   font-size: 230%;
   width: 65%;
   height: 40px;
-  margin-bottom: 2%;
+  margin-bottom: 3%;
 }
 
 .url-input {
   font-size: 230%;
   width: 65%;
   height: 40px;
-  margin-bottom: 4%;
+  margin-bottom: 5%;
 }
 
 .title {
@@ -131,7 +136,7 @@ header {
   width: 25px;
   display: inline;
   margin-top: 5px;
-  margin-left: 2px;
+  margin-left: 5px;
   border-color: transparent;
 }
 
@@ -142,23 +147,23 @@ header {
   width: 25px;
   background-color: transparent;
   display: inline;
-  margin-left: 120px;
-  margin-top: 5px;
+  margin-left: 168px;
+  margin-top: 7px;
   border-color: transparent;
 }
 
 .card-div {
-  width: 180px;
+  width: 230px;
   height: 250px;
   margin-top: 25px;
   margin-bottom: 30px;
-  margin-right: 35px;
-  margin-left: 20px;
+  margin-right: 45px;
+  margin-left: 35px;
 }
 
 .insert-photo {
-  height: 125px;
-  width: 180px;
+  height: 145px;
+  width: 230px;
   margin-bottom: -4px;
 }
 
@@ -170,6 +175,7 @@ header {
 .img-caption {
   height: 70px;
   background-color: white;
+  overflow: scroll;
 }
 
 .button-section {
@@ -178,5 +184,19 @@ header {
 }
 
 .favorite {
-  background-color: magenta;
+  background-image: url(images/favorite-active.svg);
+  background-repeat: no-repeat;
+}
+
+.error {
+  width: 20px;
+  height: 18px;
+  margin-right: 4px;
+}
+
+.caption-error,
+.title-error,
+.URL-error  {
+  color: white;
+  font-size: 20px;
 }

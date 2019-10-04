@@ -5,7 +5,11 @@ var captionInput = document.querySelector('.caption-input')
 var urlInput = document.querySelector('.url-input')
 var photoDisplay = document.querySelector('.main-2');
 
-addButton.addEventListener('click', addNewPhoto);
+addButton.addEventListener('click', updateErrors);
+
+titleInput.addEventListener('keyup', function(event) {
+
+});
 
 function addNewPhoto() {
   var newPhoto = makeInstance();
@@ -43,5 +47,78 @@ function addNewPhoto() {
   } else {
     event.target.classList.add('favorite');
   }
-
 }
+
+function deleteCard(event) {
+  var hiddenId = event.target.closest('.card-div').id;
+  var deleteBtn = document.querySelector('.delete-card');
+    removeCardObj(deleteBtn, hiddenId);
+    event.target.closest('.card-div').remove();
+    var instance = photoArr.find(function(photo){
+      return photo.id === Number(hiddenId);
+    })
+    instance.removeFromLocal(hiddenId);
+    }
+
+    function removeCardObj(photoArr, id) {
+  for (var i = 0; i < photoArr.length; i++)
+    if (photoArr[i].id === Number(id)) {
+        photoArr.splice(i, 1);
+        break;
+    }
+}
+
+function updateErrors() {
+   if (titleInput.value === '' ||
+       captionInput.value === '' ||
+       urlInput.value === '') {
+      addButton.disabled = true;
+} else {
+    makeAlbumEnabled()
+    document.querySelector('.title-error').style.visibility = 'hidden';
+    document.querySelector('.caption-error').style.visibility = 'hidden';
+    document.querySelector('.URL-error').style.visibility = 'hidden';
+    addNewPhoto();
+  }
+}
+
+function makeAlbumEnabled() {
+  addButton.disabled = false;
+}
+
+// 1. create single setError function
+// 1 var, pass it the input
+// 2. space out the input slightly
+// 3. append html into the document
+// 4. use function argument to determine error message
+// 5. create checkForErrors
+
+// function setError() {
+//   var setParagraph = document.createElement("P");
+//   var errorMsg = document.createTextNode("Field Required!")
+//   titleInput.appendChild(errorMsg);
+//   captionInput.appendChild(errorMsg);
+//   urlInput.appendChild(errorMsg);
+// }
+//
+// function titleError() {
+//    var titleInputError = document.querySelector('.title-error');
+//    var titleInput = document.querySelector('.title-input');
+//    titleInputError.style.visibility = 'visible';
+//    document.querySelector('.title-error').innerHTML = "<img class='error' src='images/error-icon.svg'> Field Required";
+//    titleInput.style.border = '1px solid #DD1972';
+// }
+//
+// function captionError() {
+//     var captionInput = document.querySelector('.caption-input');
+//     document.querySelector('.caption-error').style.visibility = 'visible';
+//     document.querySelector('.caption-error').innerHTML = "<img class='error' src='images/error-icon.svg'> Field Required!";
+//     captionInput.style.border = '1px solid #DD1972';
+// }
+//
+// function urlError() {
+//     var urlInput = document.querySelector('.url-input');
+//     document.querySelector('.URL-error').style.visibility = 'visible';
+//     document.querySelector('.min-error').innerHTML = "<img class='error' src='images/error-icon.svg'> Field Required";
+//     urlInput.style.border = '1px solid #DD1972';
+// }
