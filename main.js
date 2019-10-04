@@ -6,13 +6,12 @@ var urlInput = document.querySelector('.url-input')
 var photoDisplay = document.querySelector('.main-2');
 var inputs = document.querySelectorAll('input');
 
-addButton.addEventListener('click', updateErrors);
+addButton.addEventListener('click', addNewPhoto);
 
 inputs.forEach(function(input){
-  return input.addEventListener('keyup', updateErrors);
+  console.log(input.name)
+  return input.addEventListener('keydown', updateErrors);
 })
-
-
 
 function addNewPhoto() {
   var newPhoto = makeInstance();
@@ -71,19 +70,36 @@ function deleteCard(event) {
     }
 }
 
-function updateErrors() {
-   if (titleInput.value === '' ||
-       captionInput.value === '' ||
-       urlInput.value === '') {
-      addButton.disabled = true;
-} else {
-    makeAlbumEnabled()
-    document.querySelector('.title-error').style.visibility = 'hidden';
-    document.querySelector('.caption-error').style.visibility = 'hidden';
-    document.querySelector('.URL-error').style.visibility = 'hidden';
-    addNewPhoto();
+// function updateErrors() {
+//    if (titleInput.value === '' ||
+//        captionInput.value === '' ||
+//        urlInput.value === '') {
+//       addButton.disabled = true;
+// } else {
+//     makeAlbumEnabled()
+//     document.querySelector('.title-error').style.visibility = 'hidden';
+//     document.querySelector('.caption-error').style.visibility = 'hidden';
+//     document.querySelector('.URL-error').style.visibility = 'hidden';
+//     // addNewPhoto();
+//   }
+// }
+
+function updateErrors(e) {
+  if (e.value === '') {
+    document.querySelector(`.${e.target.name}-error`).style.visibility = 'visible';
+    addButton.disabled = true;
+  } else {
+    console.log(`.${e.target.name}-error`);
+    document.querySelector(`.${e.target.name}-error`).style.visibility = 'hidden';
   }
+  
+  if (titleInput.value !== '' &&
+       captionInput.value !== '' &&
+       urlInput.value !== '') {
+        makeAlbumEnabled();
+       }
 }
+
 
 function makeAlbumEnabled() {
   addButton.disabled = false;
