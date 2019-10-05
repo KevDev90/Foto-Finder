@@ -19,11 +19,3 @@ saveToLocal(photoArr) {
     localStorage.removeItem(id);
   }
 }
-
-window.onbeforeunload = function reInstantiateLocal() {
-  var photo = new Photo(titleInput.value,captionInput.value,urlInput.value);
-  photoArr.push(photo);
-  return photo;
-    window.localStorage.setItem("Id", photo);
-  }
-    

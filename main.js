@@ -9,13 +9,25 @@ var inputs = document.querySelectorAll('input');
 addButton.addEventListener('click', addNewPhoto);
 
 inputs.forEach(function(input){
-  console.log(input.name)
-  return input.addEventListener('keydown', updateErrors);
+  console.log(input.name);
+  return input.addEventListener('keyup', updateErrors);
 })
+
+window.onload = function checkStorage() {
+  console.log('Loaded')
+  if (localStorage) {
+    for (var i=0; i < localStorage.length; i++) {
+      var id = localStorage.key(i);
+      var item = JSON.parse(localStorage.getItem(id));
+      createCard(item)
+      photoArr.push(item);
+    }
+  }
+}
 
 function addNewPhoto() {
   var newPhoto = makeInstance();
-  createCard(newPhoto,photoDisplay);
+  createCard(newPhoto);
   newPhoto.saveToLocal(photoArr);
  }
 
@@ -25,7 +37,7 @@ function addNewPhoto() {
    return photo;
  }
 
- function createCard(newPhoto,photoDisplay) {
+ function createCard(newPhoto) {
    photoDisplay.insertAdjacentHTML('beforeend', `<div id= "${newPhoto.id}" class= "card-div">
      <p class= "img-title">${newPhoto.title}</p>
      <img class="insert-photo" src=${newPhoto.url}>
@@ -70,74 +82,20 @@ function deleteCard(event) {
     }
 }
 
-// function updateErrors() {
-//    if (titleInput.value === '' ||
-//        captionInput.value === '' ||
-//        urlInput.value === '') {
-//       addButton.disabled = true;
-// } else {
-//     makeAlbumEnabled()
-//     document.querySelector('.title-error').style.visibility = 'hidden';
-//     document.querySelector('.caption-error').style.visibility = 'hidden';
-//     document.querySelector('.URL-error').style.visibility = 'hidden';
-//     // addNewPhoto();
-//   }
-// }
-
 function updateErrors(e) {
-  if (e.value === '') {
-    document.querySelector(`.${e.target.name}-error`).style.visibility = 'visible';
-    addButton.disabled = true;
-  } else {
-    console.log(`.${e.target.name}-error`);
-    document.querySelector(`.${e.target.name}-error`).style.visibility = 'hidden';
-  }
-  
-  if (titleInput.value !== '' &&
-       captionInput.value !== '' &&
-       urlInput.value !== '') {
+    if (e.target.value === '') {
+      document.querySelector(`.${e.target.name}-error`).style.visibility = 'visible';
+      addButton.disabled = true;
+    } else {
+      document.querySelector(`.${e.target.name}-error`).style.visibility = 'hidden';
+    }
+   if (titleInput.value !== '' &&
+          captionInput.value !== '' &&
+          urlInput.value !== '') {
         makeAlbumEnabled();
-       }
-}
-
+          }
+  }
 
 function makeAlbumEnabled() {
   addButton.disabled = false;
 }
-
-// 1. create single setError function
-// 1 var, pass it the input
-// 2. space out the input slightly
-// 3. append html into the document
-// 4. use function argument to determine error message
-// 5. create checkForErrors
-
-// function setError() {
-//   var setParagraph = document.createElement("P");
-//   var errorMsg = document.createTextNode("Field Required!")
-//   titleInput.appendChild(errorMsg);
-//   captionInput.appendChild(errorMsg);
-//   urlInput.appendChild(errorMsg);
-// }
-//
-// function titleError() {
-//    var titleInputError = document.querySelector('.title-error');
-//    var titleInput = document.querySelector('.title-input');
-//    titleInputError.style.visibility = 'visible';
-//    document.querySelector('.title-error').innerHTML = "<img class='error' src='images/error-icon.svg'> Field Required";
-//    titleInput.style.border = '1px solid #DD1972';
-// }
-//
-// function captionError() {
-//     var captionInput = document.querySelector('.caption-input');
-//     document.querySelector('.caption-error').style.visibility = 'visible';
-//     document.querySelector('.caption-error').innerHTML = "<img class='error' src='images/error-icon.svg'> Field Required!";
-//     captionInput.style.border = '1px solid #DD1972';
-// }
-//
-// function urlError() {
-//     var urlInput = document.querySelector('.url-input');
-//     document.querySelector('.URL-error').style.visibility = 'visible';
-//     document.querySelector('.min-error').innerHTML = "<img class='error' src='images/error-icon.svg'> Field Required";
-//     urlInput.style.border = '1px solid #DD1972';
-// }
