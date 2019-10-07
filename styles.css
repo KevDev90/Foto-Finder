@@ -20,15 +20,19 @@ body {
   background-repeat: no-repeat;
   height: 100%;
   vertical-align: middle;
-  width: 20px;
-  height: 19px;
+  width: 35px;
+  height: 39px;
   border-radius: 6%;
-  margin-right: 5px;
-  padding-right: 2px;
+  position: absolute; left: 96%; top: 3%;
+
 }
 
 .search-input {
- height: 15px;
+ height: 35px;
+ width: 300px;
+ padding-left: 6px;
+ font-size: 20px;
+ position: absolute; left: 74.5%; top: 3%;
 }
 
 header {
@@ -44,6 +48,7 @@ header {
   width: 33%;
   margin-left: 15px;
   letter-spacing: 6px;
+  margin-top: 2%;
 
 }
 
@@ -75,6 +80,7 @@ header {
 .flex-input {
   margin-left: 30%;
   align-items: center;
+  margin-top: 1%;
 }
 
 .caption-input {
@@ -202,10 +208,10 @@ header {
   font-weight: 800;
   font-size: 20px;
   margin-left: 6%;
-
+  position: absolute; left: 36%;
 }
 
-.error-msgs {
-
-
+.title-error,
+.caption-error {
+  
 }
