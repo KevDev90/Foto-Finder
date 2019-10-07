@@ -11,7 +11,7 @@ toggleFavorite() {
   this.favorite = !this.favorite;
 }
 
-saveToLocal(pants) {
+saveToLocal() {
     localStorage.setItem(JSON.stringify(this.id), JSON.stringify(this));
   }
 

@@ -1,7 +1,7 @@
 * {
   font-family: 'Open Sans', sans-serif;
   margin: 0px;
-  padding: 0px;
+  /* padding: 0px; */
 
 }
 
@@ -21,9 +21,10 @@ body {
   height: 100%;
   vertical-align: middle;
   width: 35px;
-  height: 39px;
+  height: 41px;
   border-radius: 6%;
   position: absolute; left: 96%; top: 3%;
+  border: none;
 
 }
 
@@ -177,12 +178,16 @@ header {
 .img-title {
   height: 30px;
   background-color: white;
+  padding-left: 6px;
+  padding-top: 6px;
 }
 
 .img-caption {
   height: 70px;
   background-color: white;
   overflow: scroll;
+  padding-left: 6px;
+  padding-top: 6px;
 }
 
 .button-section {
@@ -209,9 +214,4 @@ header {
   font-size: 20px;
   margin-left: 6%;
   position: absolute; left: 36%;
-}
-
-.title-error,
-.caption-error {
-  
 }

@@ -61,7 +61,7 @@ function addNewPhoto() {
   var hiddenId = event.target.closest('.card-div').id;
   var favButton = document.querySelector('favorite-card')
   var instance = photoArr.find(function(photo){
-    return photo.id === Number(hiddenId);
+    return Number(photo.id) === Number(hiddenId);
   })
   instance.toggleFavorite();
   if (!instance.favorite) {
