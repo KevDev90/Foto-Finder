@@ -1,8 +1,8 @@
 class Photo {
-  constructor(title, caption, url) {
+  constructor(title, caption, url, id, favorite) {
     this.title = title;
-    this.id = Date.now();
-    this.favorite = false;
+    this.id = id || Date.now();
+    this.favorite = favorite || false;
     this.caption = caption;
     this.url = url;
   }
@@ -11,7 +11,7 @@ toggleFavorite() {
   this.favorite = !this.favorite;
 }
 
-saveToLocal(photoArr) {
+saveToLocal(pants) {
     localStorage.setItem(JSON.stringify(this.id), JSON.stringify(this));
   }
 

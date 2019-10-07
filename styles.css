@@ -199,5 +199,13 @@ header {
 .title-error,
 .URL-error  {
   color: white;
+  font-weight: 800;
   font-size: 20px;
+  margin-left: 6%;
+
+}
+
+.error-msgs {
+
+
 }
